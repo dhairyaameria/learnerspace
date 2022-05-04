@@ -1,8 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Learner's Space</title>
@@ -28,33 +28,41 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
+
 <body>
-   <!-- ======= Header ======= -->
- <header id="header" class="fixed-top">
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
       <h1 class="logo mr-auto"><a href="index.php">Learner's Space</a></h1>
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="index.php">Home</a></li>
-          <?php if (empty($_SESSION['username'])) : ?>   
-        <?php else : ?>  
-          <li><a href ="profile.php"><?php echo $_SESSION['first_name']?></a></li>
-      <?php endif; ?>
-       
-          <li><a href="about.php">About</a></li>     
+
+          <?php if (empty($_SESSION['username'])) : ?>
+          <?php else : ?>
+            <li><a href="profile.php"><?php echo $_SESSION['first_name'] ?></a></li>
+          <?php endif; ?>
+
+          <li><a href="about.php">About</a></li>
           <li><a href="courses.php">Courses</a></li>
-          <li><a href="template.php">Resources</a></li>
-          <li><a href="calendar.php">Calendar</a></li>  
-          <li><a href="noti.php">Notification</a></li>
+
+          <?php if (empty($_SESSION['username'])) : ?>
+          <?php else : ?>
+            <li><a href="template.php">Resources</a></li>
+            <li><a href="calendar.php">Calendar</a></li>
+            <li><a href="noti.php">Notification</a></li>
+          <?php endif; ?>
+
           <li><a href="contact.php">Contact</a></li>
         </ul>
       </nav><!-- .nav-menu -->
       <?php if (empty($_SESSION['username'])) : ?>
         <a href="login.php" class="get-started-btn">Log In</a>
-        <?php else : ?>
-          <a href="logout.php" class="get-started-btn">Log Out</a>
+      <?php else : ?>
+        <a href="logout.php" class="get-started-btn">Log Out</a>
       <?php endif; ?>
     </div>
   </header><!-- End Header -->
 </body>
+
 </html>

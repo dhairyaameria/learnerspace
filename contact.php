@@ -4,17 +4,17 @@ include('config/session.php');
 include('config/db_connect.php');
 
 // write query for all course
-$user_id = $_SESSION['user_id'];
-$sql = "SELECT id, course_name, course_code, lecturer_name, image_ext FROM course WHERE user_id = $user_id ORDER BY id";
+// $user_id = $_SESSION['user_id'];
+// $sql = "SELECT id, course_name, course_code, lecturer_name, image_ext FROM course WHERE user_id = $user_id ORDER BY id";
 
 // make query & get result
-$result = mysqli_query($conn, $sql);
+// $result = mysqli_query($conn, $sql);
 
 // fetch the resulting rows as an array
-$course = mysqli_fetch_all($result, MYSQLI_ASSOC);
+// $course = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 // free result from memory
-mysqli_free_result($result);
+// mysqli_free_result($result);
 
 // close connection
 mysqli_close($conn);
