@@ -6,7 +6,7 @@ include('config/db_connect.php');
 // write query for all course
 $sql = 'SELECT id, course_name, course_code, lecturer_name, image_ext FROM course ORDER BY id';
 
-$user_id = $_SESSION['user_id'];
+// $user_id = $_SESSION['user_id'];
 // $sql = "SELECT id, course_name, course_code, lecturer_name, image_ext FROM course WHERE user_id = $user_id ORDER BY id";
 
 
@@ -89,9 +89,8 @@ mysqli_close($conn);
       <?php endforeach; ?>
     </div>
     <br> <br>
-    <?php if ($_SESSION['login'] = true) : ?>                 
+    <?php if (!empty($_SESSION['username'])) : ?>                 
         <div class="text-center">
-       
           <a style="margin-top: 30px; margin-bottom: 30px;" class="btn btn-danger btn-lg" href="add.php" role="button">+ Add Course</a>
         </div> 
     <?php endif; ?>
